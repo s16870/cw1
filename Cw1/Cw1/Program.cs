@@ -17,7 +17,6 @@ namespace cw1
                 string html = await res.Content.ReadAsStringAsync();
                 var regex = new Regex("[a-z]+[a-z0-9]*@[a-z0-9]+\\.[a-z]+", RegexOptions.IgnoreCase);
                 MatchCollection matches = regex.Matches(html);
-                Console.WriteLine(html);
                 foreach (var m in matches)
                 {
                     Console.WriteLine(m.ToString());
