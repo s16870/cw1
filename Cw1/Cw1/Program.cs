@@ -17,7 +17,7 @@ namespace cw1
                 if (Uri.TryCreate(args[0], UriKind.Absolute, out validatedUri) && (validatedUri.Scheme == Uri.UriSchemeHttp || validatedUri.Scheme == Uri.UriSchemeHttps))
                 {
                     var httpClient = new HttpClient();
-                    HttpResponseMessage res = await httpClient.GetAsync("https://www.pja.edu.pl/dziekanat");
+                    HttpResponseMessage res = await httpClient.GetAsync(args[0]);
                     if (res.IsSuccessStatusCode)
                     {
                         string html = await res.Content.ReadAsStringAsync();
